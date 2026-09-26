@@ -109,7 +109,10 @@ Project Structure
 ├── content.js
 ├── app.js
 ├── site.webmanifest
+├── robots.txt
+├── sitemap.xml
 ├── README.md
+├── .gitignore
 │
 ├── assets/
 │   ├── styles.css
@@ -117,11 +120,17 @@ Project Structure
 │   ├── sangam-kunwar-rana-resume.pdf
 │   ├── social-preview.png
 │   ├── favicon.svg
+│   ├── icon-192.png
+│   ├── icon-512.png
 │   └── vendor/
 │       └── nepali-date-converter.js
 │
-└── resume/
-    └── index.html   # printable/browser resume page, if included
+├── resume/
+│   └── index.html   # printable/browser resume page
+│
+└── .github/
+    └── workflows/
+        └── deploy.yml   # publishes the site to GitHub Pages on every push to main
 
 Keep the file and folder names consistent with the paths referenced by index.html.
 
@@ -208,6 +217,8 @@ git add .
 git commit -m "Update portfolio content"
 git push origin main
 
+The push to `main` triggers the automatic deployment to GitHub Pages.
+
 Before pushing an important update, check:
 
 git diff
@@ -248,15 +259,15 @@ Future Improvements
 
 Potential next updates for the portfolio include:
 
-Replace the placeholder live-website URL in this README.
+Replace the placeholder portrait image (`assets/sangam-profile.jpg`) with a real photograph, keeping the same filename.
+
+Review the dates and wording in `content.js` and the resume so they exactly match official records.
 
 Add verified project case studies with measurable outcomes.
 
 Add certificates and relevant professional training as they are completed.
 
 Add GitHub/project links where applicable.
-
-Improve technical SEO with canonical URL metadata and a sitemap.
 
 Add a custom domain and configure HTTPS through the hosting provider.
 
