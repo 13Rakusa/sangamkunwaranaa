@@ -6,9 +6,11 @@ The site is designed around a clear professional direction toward business analy
 
 Live Profile
 
-Portfolio: [Add your live website URL here]
+Portfolio: https://13rakusa.github.io/sangamkunwaranaa/
 
-Resume: assets/sangam-kunwar-rana-resume.pdf
+Resume (PDF): assets/sangam-kunwar-rana-resume.pdf
+
+Resume (browser): https://13rakusa.github.io/sangamkunwaranaa/resume/
 
 LinkedIn: https://www.linkedin.com/in/sangam-kunwar-rana-14535a407/
 
@@ -109,7 +111,10 @@ Project Structure
 ├── content.js
 ├── app.js
 ├── site.webmanifest
+├── robots.txt
+├── sitemap.xml
 ├── README.md
+├── .gitignore
 │
 ├── assets/
 │   ├── styles.css
@@ -117,11 +122,17 @@ Project Structure
 │   ├── sangam-kunwar-rana-resume.pdf
 │   ├── social-preview.png
 │   ├── favicon.svg
+│   ├── icon-192.png
+│   ├── icon-512.png
 │   └── vendor/
 │       └── nepali-date-converter.js
 │
-└── resume/
-    └── index.html   # printable/browser resume page, if included
+├── resume/
+│   └── index.html   # printable/browser resume page
+│
+└── .github/
+    └── workflows/
+        └── deploy.yml   # publishes the site to GitHub Pages on every push to main
 
 Keep the file and folder names consistent with the paths referenced by index.html.
 
@@ -187,17 +198,17 @@ A local server is preferable when testing relative asset paths, downloads, JavaS
 
 Deployment
 
-Because the site is a static HTML/CSS/JavaScript project, it can be deployed through services such as:
+The site is hosted on GitHub Pages and deploys automatically: every push to the `main` branch runs the `.github/workflows/deploy.yml` workflow and publishes the site within a couple of minutes.
 
-GitHub Pages
+Live URL: https://13rakusa.github.io/sangamkunwaranaa/
 
-Cloudflare Pages
+One-time hosting setup (documented here for reference):
 
-Netlify
+1. The repository must be public for free GitHub Pages hosting (repo Settings → General → Danger Zone → Change visibility → Public). Only collaborators can edit the code — visitors can view the site but cannot change it.
+2. Enable Pages with the Actions source: repo Settings → Pages → Build and deployment → Source: "GitHub Actions".
+3. Push to `main` (or run the workflow manually from the Actions tab). The site goes live at the URL above.
 
-Vercel
-
-For GitHub-based deployment, push the project files to the repository and configure the hosting provider to publish the repository's main branch.
+A custom domain (for example a free .com.np domain for Nepali citizens) can be attached later in Settings → Pages → Custom domain — when you do, update the canonical/OG URLs in `index.html`, plus `robots.txt` and `sitemap.xml`.
 
 Git Workflow
 
@@ -207,6 +218,8 @@ git status
 git add .
 git commit -m "Update portfolio content"
 git push origin main
+
+The push to `main` triggers the automatic deployment to GitHub Pages.
 
 Before pushing an important update, check:
 
@@ -248,15 +261,15 @@ Future Improvements
 
 Potential next updates for the portfolio include:
 
-Replace the placeholder live-website URL in this README.
+Replace the placeholder portrait image (`assets/sangam-profile.jpg`) with a real photograph, keeping the same filename.
+
+Review the dates and wording in `content.js` and the resume so they exactly match official records.
 
 Add verified project case studies with measurable outcomes.
 
 Add certificates and relevant professional training as they are completed.
 
 Add GitHub/project links where applicable.
-
-Improve technical SEO with canonical URL metadata and a sitemap.
 
 Add a custom domain and configure HTTPS through the hosting provider.
 
